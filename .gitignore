@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+
+# TypeScript compiled output
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional npm cache & debug logs
+.npm/
+npm-debug.log*
+
+# Optional eslint cache
+.eslintcache
+
+# Optional artifacts of testing libraries
+/coverage
