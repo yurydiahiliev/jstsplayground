@@ -1,4 +1,4 @@
-import {test as baseUiTest} from '@playwright/test'
+import { test as baseUiTest } from '@playwright/test'
 import { HomePage } from './homePage'
 import { CatalogPage } from './catalogPage';
 
