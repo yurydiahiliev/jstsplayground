@@ -8,23 +8,23 @@ export const baseFixture = test.extend<{app: Application}>({
     }
 })
 
-export type DefaultUsers = {
-    admin: {
-        userName: string,
-        userPassword: string
-    }
-}
+export type User = {
+    userName: string;
+    userPassword: string;
+};
 
-export const loggedAsAdminTest = baseFixture.extend<{ admin: DefaultUsers['admin'], app: Application }>({
-    admin: {
-        userName: 'admin',
-        userPassword: 'admin'
-    },
+export const defaultAdmin: User = {
+    userName: 'admin',
+    userPassword: 'admin'
+};
+
+export const loggedAsAdminTest = baseFixture.extend<{ user: User, app: Application }>({
+    user: [defaultAdmin, { scope: 'test' }],
     
-    app: async ({ app, admin }, use) => {
+    app: async ({ app, user }, use) => {
         await app.loginPage.open();
         await app.loginPage.expectLoaded();
-        await app.loginPage.loginAs(admin);
+        await app.loginPage.loginAs(user);
         await app.overviewPage.expectLoaded();
         await use(app);
     }

@@ -1,5 +1,6 @@
 import { expect } from "playwright/test";
 import { AppPage } from "../baseClasses";
+import { User } from "../../fixtures/uiFixture";
 
 export class LoginPage extends AppPage {
 
@@ -15,7 +16,7 @@ export class LoginPage extends AppPage {
        await expect(this.submitButton).toBeVisible();
     }
 
-    async loginAs(user: {userName: string, userPassword: string}) {
+    async loginAs(user: User) {
         await this.userName.fill(user.userName);
         await this.userPassword.fill(user.userPassword);
         await this.submitButton.click();
