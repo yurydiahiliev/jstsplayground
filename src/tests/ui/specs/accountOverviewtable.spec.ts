@@ -1,4 +1,4 @@
-import test from "playwright/test";
+import test from "@playwright/test";
 import { defaultAdmin, loggedAsAdminTest } from "../fixtures/uiFixture";
 import { Application } from "../app/application";
 

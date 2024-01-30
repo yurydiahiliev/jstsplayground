@@ -16,7 +16,7 @@ export class LoginPage extends AppPage {
        await expect(this.submitButton).toBeVisible();
     }
 
-    async loginAs(user: User) {
+    async loginAs(user: User): Promise<void> {
         await this.userName.fill(user.userName);
         await this.userPassword.fill(user.userPassword);
         await this.submitButton.click();
