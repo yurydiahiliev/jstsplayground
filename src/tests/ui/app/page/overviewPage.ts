@@ -3,7 +3,7 @@ import { AppPage } from '../baseClasses';
 import { AccountServicesLinksComponent } from '../component/accountServices';
 
 export class OverviewPage extends AppPage {
-    
+
     public pagePath: string = '/overview.htm';
 
     public accountServicesLinks = new AccountServicesLinksComponent(this.page);
@@ -18,8 +18,7 @@ export class OverviewPage extends AppPage {
 
     async getAllRows() {
         await this.accountsOverviewTable.locator('tr[ng-repeat="account in accounts"]').first().waitFor();
-        const rows = await this.accountsOverviewTable.locator('tr[ng-repeat="account in accounts"]').elementHandles();
-        return rows;
+        return await this.accountsOverviewTable.locator('tr[ng-repeat="account in accounts"]').elementHandles();
     }
 
     async getRowData(rowIndex: number): Promise<string[]> {
