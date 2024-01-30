@@ -2,7 +2,7 @@ import test from "playwright/test";
 import { defaultAdmin, loggedAsAdminTest } from "../fixtures/uiFixture";
 import { Application } from "../app/application";
 
-test('Without fixture', async ({ page }) => {
+test(`Check non-empty Account Services Links and Account Overview Table On Admin Overview page`, async ({ page }) => {
     const app = new Application(page);
     await app.loginPage.open();
     await app.loginPage.expectLoaded();
