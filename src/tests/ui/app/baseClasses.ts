@@ -10,7 +10,7 @@ export abstract class BasePage {
 }
 
 export abstract class Component extends BasePage {
-    
+
     abstract expectLoaded(message?: string): Promise<void>;
 
     async isLoaded(): Promise<boolean> {
@@ -28,7 +28,7 @@ export abstract class AppPage extends Component {
     public abstract pagePath: string;
 
     async open(path?: string) {
-        await this.page.goto(path ?? this.pagePath);
+        await this.page.goto(path ?? this.pagePath, { waitUntil: 'networkidle' });
         await this.expectLoaded();
     }
 }

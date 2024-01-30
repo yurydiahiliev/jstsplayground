@@ -42,7 +42,6 @@ export class OverviewPage extends AppPage {
         await Promise.all(rows.map(async (row, rowIndex) => {
             const rowData = await this.getRowData(rowIndex);
             rowData.forEach(cellText => {
-                console.log(cellText)
                 expect(cellText.trim()).not.toBe('');
             })
         }))
