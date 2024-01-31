@@ -13,9 +13,14 @@ export type User = {
     userPassword: string;
 };
 
+export const defaultAdmin = {
+    userName: process.env.ADMIN_USERNAME || 'admin',
+    userPassword: process.env.ADMIN_PASSWORD || 'admin'
+};
+
 export const defaultUser = {
-    userName: 'user',
-    userPassword: 'user'
+    userName: process.env.USER_USERNAME || 'user',
+    userPassword: process.env.USER_PASSWORD || 'user'
 };
 
 function createLoggedInFixture(user: User) {
@@ -37,12 +42,5 @@ function createLoggedInFixture(user: User) {
     });
 }
 
-export const loggedAsAdminTest = createLoggedInFixture({
-    userName: process.env.ADMIN_USERNAME || 'admin',
-    userPassword: process.env.ADMIN_PASSWORD || 'admin'
-});
-
-export const loggedAsUserTest = createLoggedInFixture({
-    userName: process.env.USER_USERNAME || 'user',
-    userPassword: process.env.USER_PASSWORD || 'user'
-});
+export const loggedAsAdminTest = createLoggedInFixture(defaultAdmin);
+export const loggedAsUserTest = createLoggedInFixture(defaultUser);
