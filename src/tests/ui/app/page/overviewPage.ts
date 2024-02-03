@@ -4,7 +4,7 @@ import { AccountServicesLinksComponent } from '../component/accountServices';
 
 export class OverviewPage extends AppPage {
 
-    public pagePath: string = '/overview.htm';
+    public pagePath: string = '/parabank/overview.htm';
 
     public accountServicesLinks = new AccountServicesLinksComponent(this.page);
 

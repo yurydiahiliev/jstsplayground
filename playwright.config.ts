@@ -5,10 +5,13 @@ export default defineConfig({
   fullyParallel: true,
   timeout: 3 * 60 * 1000,  
   use: {
-    baseURL: "https://parabank.parasoft.com/parabank",
+    baseURL: "https://parabank.parasoft.com",
     headless: false,
     ignoreHTTPSErrors: true,
     trace: 'on-first-retry',
+    extraHTTPHeaders: {
+      'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'
+    }
   },
   projects: [
     {

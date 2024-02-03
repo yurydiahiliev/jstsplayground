@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { Application } from "../app/application";
 
-export const baseFixture = test.extend<{app: Application}>({
+export const baseFixture = test.extend<{ app: Application }>({
     app: async ({ page }, use) => {
         const app = new Application(page);
         await use(app);
@@ -26,7 +26,7 @@ export const defaultUser = {
 function createLoggedInFixture(user: User) {
     return baseFixture.extend<{ user: User, app: Application }>({
         user: [user, { scope: 'test' }],
-        
+
         app: async ({ app, user }, use) => {
             try {
                 await app.loginPage.open();
