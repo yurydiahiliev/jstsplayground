@@ -12,40 +12,46 @@ Services to test:
 
 ### Dependencies
 
-    ```
-    git clone https://github.com/yurydiahiliev/jstsplayground.git
-    cd jstsplayground
-    ```
-    ```
-    npm install
-    npx playwright install --with-deps
-    ```
+```
+git clone https://github.com/yurydiahiliev/jstsplayground.git
+cd jstsplayground
+```
+
+```
+git clone https://github.com/yurydiahiliev/jstsplayground.git
+cd jstsplayground
+```
+
+```
+npm install
+npx playwright install --with-deps
+```
 
 ### Running UI tests 
 
-    ```
-    npx playwright test  
-    ```
+```
+npx playwright test  
+```
 
 
 ### Running API tests 
 
 Go to directory: src/tests/api and execute the following command that will trigger jest tests
 
-    ```
-    npm test
-    ```
+```
+npm test
+```
 
 Or install Jest globally using:
 
-    ```
-    npm install jest
-    jest
-    ```
+```
+npm install jest
+jest
+```
 
 
 ### Reporting
 
-    ```
-    npx playwright show-report 
-    ```
+```
+npx playwright show-report 
+```
