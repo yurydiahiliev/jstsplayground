@@ -8,8 +8,8 @@ export class OverviewPage extends AppPage {
 
     public accountServicesLinks = new AccountServicesLinksComponent(this.page);
 
-    private readonly accountsOverviewContainer = this.page.locator("div[ng-if='showOverview']");
-    private readonly accountsOverviewTable = this.page.locator('[id="accountTable"]');
+    private readonly accountsOverviewContainer = this.page.locator("div[id='showOverview']");
+    private readonly accountsOverviewTable = this.page.locator("table[id='accountTable']");
 
     async expectLoaded(): Promise<void> {
         await expect(this.accountsOverviewContainer).toBeVisible();
@@ -17,8 +17,8 @@ export class OverviewPage extends AppPage {
     }
 
     async getAllRows() {
-        await this.accountsOverviewTable.locator('tr[ng-repeat="account in accounts"]').first().waitFor();
-        return await this.accountsOverviewTable.locator('tr[ng-repeat="account in accounts"]').elementHandles();
+        await this.accountsOverviewTable.locator('tbody tr').first().waitFor();
+        return await this.accountsOverviewTable.locator('tbody tr').elementHandles();
     }
 
     async getRowData(rowIndex: number): Promise<string[]> {
@@ -41,9 +41,17 @@ export class OverviewPage extends AppPage {
 
         await Promise.all(rows.map(async (row, rowIndex) => {
             const rowData = await this.getRowData(rowIndex);
-            rowData.forEach(cellText => {
-                expect(cellText.trim()).not.toBe('');
-            })
+            const [firstCell, secondCell, thirdCell, fourthCell] = rowData;
+
+            expect(parseFloat(firstCell)).toBeGreaterThan(0);
+    
+            expect(parseFloat(secondCell)).toBeGreaterThan(0);
+            expect(secondCell).toContain('$');
+    
+            expect(parseFloat(thirdCell)).toBeGreaterThan(0);
+            expect(thirdCell).toContain('$');
+
+            expect(fourthCell).toContain('Total');
         }))
     }
 }
