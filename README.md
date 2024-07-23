@@ -12,18 +12,18 @@ Services to test:
 
 ### Dependencies
 
-    ```sh
+    ```
     git clone https://github.com/yurydiahiliev/jstsplayground.git
     cd jstsplayground
     ```
-    ```sh
+    ```
     npm install
     npx playwright install --with-deps
     ```
 
 ### Running UI tests 
 
-    ```sh
+    ```
     npx playwright test  
     ```
 
@@ -32,13 +32,13 @@ Services to test:
 
 Go to directory: src/tests/api and execute the following command that will trigger jest tests
 
-  ```sh
+    ```
     npm test
     ```
 
 Or install Jest globally using:
 
-    ```sh
+    ```
     npm install jest
     jest
     ```
@@ -46,6 +46,6 @@ Or install Jest globally using:
 
 ### Reporting
 
-    ```sh
+    ```
     npx playwright show-report 
     ```
