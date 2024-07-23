@@ -10,7 +10,7 @@ Services to test:
 
 ## Getting Started
 
-### Requiremenrts
+### Requirements
 
 NodeJs version >= 20
 NPM version >= 10
