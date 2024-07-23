@@ -17,10 +17,6 @@ git clone https://github.com/yurydiahiliev/jstsplayground.git
 cd jstsplayground
 ```
 
-```
-git clone https://github.com/yurydiahiliev/jstsplayground.git
-cd jstsplayground
-```
 
 ```
 npm install
