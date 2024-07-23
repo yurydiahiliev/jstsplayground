@@ -8,7 +8,7 @@ test('Sign up with new user', async ({ page }) => {
     await app.signUpPage.expectLoaded();
     await app.signUpPage.fillRegisterForm(
         'firstname', 'lastName', 'test', 'test','test','test','test','test','user','user','user',);
-    await app.signUpPage.verifyUserWasCreated();  
+    await app.signUpPage.verifyUserWasCreatedOrExist();  
 });
 
 test('Sign up with new admin user', async ({ page }) => {
@@ -17,7 +17,7 @@ test('Sign up with new admin user', async ({ page }) => {
     await app.signUpPage.expectLoaded();
     await app.signUpPage.fillRegisterForm(
         'firstname', 'lastName', 'test', 'test','test','test','test','test','admin','admin','admin',);
-    await app.signUpPage.verifyUserWasCreated();  
+    await app.signUpPage.verifyUserWasCreatedOrExist();  
 });
 
 loggedAsUserTest(`As a user check non-empty Account Services Links and Account Overview Table On Admin Overview page with fixture`, async ({ app }) => {

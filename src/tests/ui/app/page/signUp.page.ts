@@ -60,10 +60,10 @@ export class SignUpPage extends AppPage {
         await this.registerButton.click();
     }
 
-    async verifyUserWasCreated() {
+    async verifyUserWasCreatedOrExist() {
         const errorMessageLocator = this.page.locator('text=This username already exists.');
         const successTextLocator = this.page.getByText('Your account was created successfully. You are now logged in.');
     
-        expect(await errorMessageLocator.isEnabled() || await successTextLocator.isVisible()).toBeTruthy(); 
+        await expect(successTextLocator.or(errorMessageLocator)).toBeVisible(); 
     }
 }

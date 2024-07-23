@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './src/tests/ui/specs',
-  fullyParallel: true,
+  fullyParallel: false,
   timeout: 3 * 60 * 1000,  
   use: {
     baseURL: "https://parabank.parasoft.com",
